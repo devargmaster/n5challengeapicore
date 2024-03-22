@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{8B5A866D-4A01-4346-9B56-E0A6BAAB46FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{9FBD5A9D-9C4F-4559-BC0F-140D35E60035}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions", "Exceptions\Exceptions.csproj", "{5A41124A-2CD8-4AA8-83BF-72333603B2E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8B5A866D-4A01-4346-9B56-E0A6BAAB46FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B5A866D-4A01-4346-9B56-E0A6BAAB46FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B5A866D-4A01-4346-9B56-E0A6BAAB46FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B5A866D-4A01-4346-9B56-E0A6BAAB46FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FBD5A9D-9C4F-4559-BC0F-140D35E60035}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FBD5A9D-9C4F-4559-BC0F-140D35E60035}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FBD5A9D-9C4F-4559-BC0F-140D35E60035}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FBD5A9D-9C4F-4559-BC0F-140D35E60035}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A41124A-2CD8-4AA8-83BF-72333603B2E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A41124A-2CD8-4AA8-83BF-72333603B2E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A41124A-2CD8-4AA8-83BF-72333603B2E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A41124A-2CD8-4AA8-83BF-72333603B2E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
