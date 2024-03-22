@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions", "Exceptions\Exceptions.csproj", "{5A41124A-2CD8-4AA8-83BF-72333603B2E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreWebApi", "CoreWebApi\CoreWebApi.csproj", "{AF1F93DE-D176-4AEF-B228-369CF350BE77}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{5A41124A-2CD8-4AA8-83BF-72333603B2E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A41124A-2CD8-4AA8-83BF-72333603B2E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A41124A-2CD8-4AA8-83BF-72333603B2E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF1F93DE-D176-4AEF-B228-369CF350BE77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF1F93DE-D176-4AEF-B228-369CF350BE77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF1F93DE-D176-4AEF-B228-369CF350BE77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF1F93DE-D176-4AEF-B228-369CF350BE77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

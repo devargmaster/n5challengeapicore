@@ -1,8 +1,20 @@
 {
   "version": 2,
-  "dgSpecHash": "AP/IaAtwOYVCWWTaso10sHP7tPi/h5tnJCizYm+0fi1KiIJUyHOJfXhINDukIvQf0sOOWyC06JPEq8XCM/lTRw==",
+  "dgSpecHash": "d0UvqvlIeAtqlpZbcjrNJ78kOFYkiVGdnl8Y82mqoHRkq9pVYyxr+yt8WdSpBFniWMvrgoQIMaOogyScYA0cjQ==",
   "success": true,
   "projectFilePath": "/Users/walterarce/RiderProjects/n5challengeApiCore/n5challengeapicore/Data/Data.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/walterarce/.nuget/packages/microsoft.entityframeworkcore/9.0.0-preview.2.24128.4/microsoft.entityframeworkcore.9.0.0-preview.2.24128.4.nupkg.sha512",
+    "/Users/walterarce/.nuget/packages/microsoft.entityframeworkcore.abstractions/9.0.0-preview.2.24128.4/microsoft.entityframeworkcore.abstractions.9.0.0-preview.2.24128.4.nupkg.sha512",
+    "/Users/walterarce/.nuget/packages/microsoft.entityframeworkcore.analyzers/9.0.0-preview.2.24128.4/microsoft.entityframeworkcore.analyzers.9.0.0-preview.2.24128.4.nupkg.sha512",
+    "/Users/walterarce/.nuget/packages/microsoft.extensions.caching.abstractions/9.0.0-preview.2.24128.5/microsoft.extensions.caching.abstractions.9.0.0-preview.2.24128.5.nupkg.sha512",
+    "/Users/walterarce/.nuget/packages/microsoft.extensions.caching.memory/9.0.0-preview.2.24128.5/microsoft.extensions.caching.memory.9.0.0-preview.2.24128.5.nupkg.sha512",
+    "/Users/walterarce/.nuget/packages/microsoft.extensions.dependencyinjection/9.0.0-preview.2.24128.5/microsoft.extensions.dependencyinjection.9.0.0-preview.2.24128.5.nupkg.sha512",
+    "/Users/walterarce/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/9.0.0-preview.2.24128.5/microsoft.extensions.dependencyinjection.abstractions.9.0.0-preview.2.24128.5.nupkg.sha512",
+    "/Users/walterarce/.nuget/packages/microsoft.extensions.logging/9.0.0-preview.2.24128.5/microsoft.extensions.logging.9.0.0-preview.2.24128.5.nupkg.sha512",
+    "/Users/walterarce/.nuget/packages/microsoft.extensions.logging.abstractions/9.0.0-preview.2.24128.5/microsoft.extensions.logging.abstractions.9.0.0-preview.2.24128.5.nupkg.sha512",
+    "/Users/walterarce/.nuget/packages/microsoft.extensions.options/9.0.0-preview.2.24128.5/microsoft.extensions.options.9.0.0-preview.2.24128.5.nupkg.sha512",
+    "/Users/walterarce/.nuget/packages/microsoft.extensions.primitives/9.0.0-preview.2.24128.5/microsoft.extensions.primitives.9.0.0-preview.2.24128.5.nupkg.sha512"
+  ],
   "logs": []
 }
