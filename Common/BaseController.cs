@@ -8,7 +8,8 @@ using Microsoft.AspNetCore.Http;
 
 namespace Common;
 
-// recibe la entidad puede ser cualquiera de la api
+  [ApiController]
+  [Route("api/[controller]")]
 public class BaseController<T> : ControllerBase where T: BaseDomainEntity
 {
     // utilizo mediator
@@ -26,12 +27,9 @@ public class BaseController<T> : ControllerBase where T: BaseDomainEntity
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<List<T>>> Get([FromQuery] int pageNumber = 1,
-        [FromQuery] int pageSize = 5)
+    public async Task<ActionResult<List<T>>> Get()
     {
-        var response = await _mediator.Send(new GetQuery<T>(pageNumber: pageNumber,
-            pageSize: pageSize));
-        //TODO: Falta resolver DATA para devolver en el response.
-        return Ok(response);
+        var response = await _mediator.Send(new GetQuery<T>());
+        return Ok(response.Data.ToList());
     }
 }
