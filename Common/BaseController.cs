@@ -1,4 +1,6 @@
+using System.ComponentModel.DataAnnotations;
 using System.Net.Mime;
+using Common.GenericsMethods;
 using Common.GenericsMethods.Queries;
 using Data.Models;
 using Exceptions;
@@ -31,5 +33,31 @@ public class BaseController<T> : ControllerBase where T: BaseDomainEntity
     {
         var response = await _mediator.Send(new GetQuery<T>());
         return Ok(response.Data.ToList());
+    }
+    [HttpGet("{id}")]
+    [Produces(MediaTypeNames.Application.Json)]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status404NotFound)]
+    [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<T>> GetById([FromRoute] Guid id,
+        [FromQuery] Dictionary<string, string>? entitiesToInclude = null)
+    {
+
+        var response = await _mediator.Send(new GetByIdQuery<T>(id: id));
+        return Ok(response);
+    }
+    [HttpPost]
+    [Consumes(MediaTypeNames.Application.Json)]
+    [Produces(MediaTypeNames.Application.Json)]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status404NotFound)]
+    [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status422UnprocessableEntity)]
+    [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<Guid>> Create([FromBody] T entityToCreate)
+    {
+        var response = await _mediator.Send(new CreateCommand<T>(entityToCreate));
+        return Ok(response);
     }
 }

@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using Data.Contexts;
 using Data.Models;
 using Exceptions.Types;
@@ -33,5 +34,29 @@ public class SqlRepository : IRepository
              return null;
          }
     }
-    
+
+    public Task<T> GetByIdAsync<T>(Guid id) where T : BaseDomainEntity
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<IEnumerable<T>> FindAsync<T>(Expression<Func<T, bool>> predicate) where T : BaseDomainEntity
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<T> CreateAsync<T>(T entity) where T : BaseDomainEntity
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<T> UpdateAsync<T>(T entity) where T : BaseDomainEntity
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<T> DeleteAsync<T>(Guid id) where T : BaseDomainEntity
+    {
+        throw new NotImplementedException();
+    }
 }
