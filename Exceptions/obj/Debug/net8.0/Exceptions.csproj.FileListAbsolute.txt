@@ -1,0 +1,12 @@
+/Users/walterarce/RiderProjects/n5challengeApiCore/n5challengeapicore/Exceptions/bin/Debug/net8.0/Exceptions.deps.json
+/Users/walterarce/RiderProjects/n5challengeApiCore/n5challengeapicore/Exceptions/bin/Debug/net8.0/Exceptions.dll
+/Users/walterarce/RiderProjects/n5challengeApiCore/n5challengeapicore/Exceptions/bin/Debug/net8.0/Exceptions.pdb
+/Users/walterarce/RiderProjects/n5challengeApiCore/n5challengeapicore/Exceptions/obj/Debug/net8.0/Exceptions.GeneratedMSBuildEditorConfig.editorconfig
+/Users/walterarce/RiderProjects/n5challengeApiCore/n5challengeapicore/Exceptions/obj/Debug/net8.0/Exceptions.AssemblyInfoInputs.cache
+/Users/walterarce/RiderProjects/n5challengeApiCore/n5challengeapicore/Exceptions/obj/Debug/net8.0/Exceptions.AssemblyInfo.cs
+/Users/walterarce/RiderProjects/n5challengeApiCore/n5challengeapicore/Exceptions/obj/Debug/net8.0/Exceptions.csproj.CoreCompileInputs.cache
+/Users/walterarce/RiderProjects/n5challengeApiCore/n5challengeapicore/Exceptions/obj/Debug/net8.0/Exceptions.sourcelink.json
+/Users/walterarce/RiderProjects/n5challengeApiCore/n5challengeapicore/Exceptions/obj/Debug/net8.0/Exceptions.dll
+/Users/walterarce/RiderProjects/n5challengeApiCore/n5challengeapicore/Exceptions/obj/Debug/net8.0/refint/Exceptions.dll
+/Users/walterarce/RiderProjects/n5challengeApiCore/n5challengeapicore/Exceptions/obj/Debug/net8.0/Exceptions.pdb
+/Users/walterarce/RiderProjects/n5challengeApiCore/n5challengeapicore/Exceptions/obj/Debug/net8.0/ref/Exceptions.dll
