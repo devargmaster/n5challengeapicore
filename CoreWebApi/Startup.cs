@@ -1,5 +1,7 @@
+using CoreWebApi.ApiData;
+using Data.Contexts;
 using Microsoft.OpenApi.Models;
-
+using Microsoft.EntityFrameworkCore;
 namespace CoreWebApi;
 
 public class Startup
@@ -18,6 +20,9 @@ public class Startup
         {
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "N5 Challenge", Version = "v1" });
         });
+        services.AddDbContext<AppDbContext>(options =>
+            options.UseSqlServer(Configuration.GetSection("ConnectionString:SqlServerConnection").Value));
+        services.AddScoped<IDbContext>(provider => provider.GetRequiredService<AppDbContext>());
     }
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {

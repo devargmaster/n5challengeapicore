@@ -60,4 +60,41 @@ public class BaseController<T> : ControllerBase where T: BaseDomainEntity
         var response = await _mediator.Send(new CreateCommand<T>(entityToCreate));
         return Ok(response);
     }
+    [HttpPut("{id}")]
+    [Consumes(MediaTypeNames.Application.Json)]
+    [Produces(MediaTypeNames.Application.Json)]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status404NotFound)]
+    [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status422UnprocessableEntity)]
+    [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<T>> Update([FromRoute] Guid id, [FromBody] T entityToUpdate)
+    {
+        if (id != entityToUpdate.Id)
+        {
+            return BadRequest();
+        }
+
+        var response = await _mediator.Send(new UpdateCommand<T>(entityToUpdate));
+        return Ok(response);
+    }
+
+    [HttpDelete("{id}")]
+    [Produces(MediaTypeNames.Application.Json)]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status404NotFound)]
+    [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult> Delete([FromRoute] Guid id)
+    {
+        bool response = await _mediator.Send(new DeleteCommand(id));
+        if (response)
+        {
+            return Ok();
+        }
+        else
+        {
+            return NotFound();
+        }
+    }
 }
