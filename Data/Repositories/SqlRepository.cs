@@ -62,7 +62,7 @@ public class SqlRepository : IRepository
     public async Task<T> DeleteAsync<T>(Guid id) where T : BaseDomainEntity
     {
         var entity = await context.Set<T>().FindAsync(id);
-        if (entity == null)
+        if (entity != null)
         {
             context.Set<T>().Remove(entity);
             await context.SaveChangesAsync();

@@ -15,7 +15,7 @@ public class DeleteHandler<T> : IRequestHandler<DeleteCommand, bool> where T : B
     
     public async Task<bool> Handle(DeleteCommand request, CancellationToken cancellationToken)
     {
-        await _repository.DeleteAsync<T>(request.Id);
-        return true;
+        var entity = await _repository.DeleteAsync<T>(request.Id);
+        return entity != null ;
     }
 }
