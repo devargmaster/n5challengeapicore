@@ -1,8 +1,9 @@
+using Data.Models;
 using MediatR;
 
 namespace Common.GenericsMethods;
 
-public class DeleteCommand : IRequest<bool>
+public class DeleteCommand<T> : IRequest<Unit> where T : BaseDomainEntity
 {
     public Guid Id { get; }
 

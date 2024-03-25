@@ -7,7 +7,7 @@ namespace Common.GenericsMethods.GenericHandlers
 
 
 {
-    public class UpdateHandler<T> : IRequestHandler<UpdateCommand<T>, Updater<T>> where T : BaseDomainEntity
+    public class UpdateHandler<T> : IRequestHandler<UpdateCommand<T>, Unit> where T : BaseDomainEntity
     {
         private readonly IRepository repository;
 
@@ -16,10 +16,10 @@ namespace Common.GenericsMethods.GenericHandlers
             this.repository = repository;
         }
 
-        public async Task<Updater<T>> Handle(UpdateCommand<T> request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(UpdateCommand<T> request, CancellationToken cancellationToken)
         {
             var entity = await repository.UpdateAsync<T>(request.EntityToUpdate, request.EntityToUpdate.Id);
-            return new Updater<T>(entity);
+            return Unit.Value;
         }
     }
 }

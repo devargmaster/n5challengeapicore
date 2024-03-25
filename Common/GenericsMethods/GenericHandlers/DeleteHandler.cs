@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Common.GenericsMethods.GenericHandlers;
 
-public class DeleteHandler<T> : IRequestHandler<DeleteCommand, bool> where T : BaseDomainEntity
+public class DeleteHandler<T> : IRequestHandler<DeleteCommand<T>, Unit> where T : BaseDomainEntity
 {
     private readonly IRepository _repository;
 
@@ -13,9 +13,9 @@ public class DeleteHandler<T> : IRequestHandler<DeleteCommand, bool> where T : B
         _repository = repositoryFactory.CreateRepository<T>();
     }
     
-    public async Task<bool> Handle(DeleteCommand request, CancellationToken cancellationToken)
+    public async Task<Unit> Handle(DeleteCommand<T> request, CancellationToken cancellationToken)
     {
         var entity = await _repository.DeleteAsync<T>(request.Id);
-        return entity != null ;
+        return Unit.Value;
     }
 }

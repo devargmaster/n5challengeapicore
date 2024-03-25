@@ -67,7 +67,10 @@ public class SqlRepository : IRepository
             context.Set<T>().Remove(entity);
             await context.SaveChangesAsync();
         }
-
+        else
+        {
+            throw new KeyNotFoundException($"Entity of type {typeof(T).Name} with id {id} not found.");
+        }
         return entity;
     }
 }

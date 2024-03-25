@@ -86,15 +86,7 @@ public class BaseController<T> : ControllerBase where T: BaseDomainEntity
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult> Delete([FromRoute] Guid id)
     {
-        bool response = await _mediator.Send(new DeleteCommand(id));
-        if (response)
-        {
-            return Ok();
-        }
-        else
-        {
-            Console.WriteLine("Error al eliminar el recurso");
-            return NotFound();
-        }
+        await _mediator.Send(new DeleteCommand<T>(id));
+        return Ok();
     }
 }

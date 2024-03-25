@@ -32,14 +32,14 @@ public class Startup
         services.AddMediatR(typeof(CreateHandler<Permissions>).Assembly, typeof(CreateHandler<PermissionsType>).Assembly);
         services.AddScoped(typeof(IRequestHandler<CreateCommand<PermissionsType>, CreateResponse<PermissionsType>>), typeof(CreateHandler<PermissionsType>));
         services.AddScoped(typeof(IRequestHandler<CreateCommand<Permissions>, CreateResponse<Permissions>>), typeof(CreateHandler<Permissions>));
-        services.AddScoped(typeof(IRequestHandler<UpdateCommand<Permissions>, Updater<Permissions>>), typeof(UpdateHandler<Permissions>));
-        services.AddScoped(typeof(IRequestHandler<UpdateCommand<PermissionsType>, Updater<PermissionsType>>), typeof(UpdateHandler<PermissionsType>));
+        services.AddScoped(typeof(IRequestHandler<UpdateCommand<Permissions>, Unit>), typeof(UpdateHandler<Permissions>));
+        services.AddScoped(typeof(IRequestHandler<UpdateCommand<PermissionsType>, Unit>), typeof(UpdateHandler<PermissionsType>));
         services.AddScoped(typeof(IRequestHandler<GetQuery<PermissionsType>, GetResponse<PermissionsType>>), typeof(GetHandler<PermissionsType>));
         services.AddScoped(typeof(IRequestHandler<GetQuery<Permissions>, GetResponse<Permissions>>), typeof(GetHandler<Permissions>));
         services.AddScoped(typeof(IRequestHandler<GetByIdQuery<Permissions>, GetByIdResponse<Permissions>>), typeof(GetByIdHandler<Permissions>));
         services.AddScoped(typeof(IRequestHandler<GetByIdQuery<PermissionsType>, GetByIdResponse<PermissionsType>>), typeof(GetByIdHandler<PermissionsType>));
-        services.AddScoped(typeof(IRequestHandler<DeleteCommand, bool>), typeof(DeleteHandler<Permissions>));
-        services.AddScoped(typeof(IRequestHandler<DeleteCommand, bool>), typeof(DeleteHandler<PermissionsType>));
+        services.AddScoped(typeof(IRequestHandler<DeleteCommand<Permissions>, Unit>), typeof(DeleteHandler<Permissions>));
+        services.AddScoped(typeof(IRequestHandler<DeleteCommand<PermissionsType>, Unit>), typeof(DeleteHandler<PermissionsType>));
         services.AddScoped<IRepositoryFactory, RepositoryFactory>();
         services.AddScoped<SqlRepository>();
         services.AddScoped<IDbContext>(provider => provider.GetRequiredService<AppDbContext>());

@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Common.GenericsMethods;
 
-public class UpdateCommand<T> : IRequest<Updater<T>>, IRequest<Unit> where T : BaseDomainEntity
+public class UpdateCommand<T> : IRequest<Unit> where T : BaseDomainEntity
 {
     public T EntityToUpdate { get; }
 
