@@ -18,7 +18,7 @@ namespace Common.GenericsMethods.GenericHandlers
 
         public async Task<Unit> Handle(UpdateCommand<T> request, CancellationToken cancellationToken)
         {
-            var entity = await repository.UpdateAsync<T>(request.EntityToUpdate, request.EntityToUpdate.Id);
+            await repository.UpdateAsync(request.EntityToUpdate);
             return Unit.Value;
         }
     }

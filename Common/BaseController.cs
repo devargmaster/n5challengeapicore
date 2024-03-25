@@ -74,7 +74,7 @@ public class BaseController<T> : ControllerBase where T: BaseDomainEntity
             return BadRequest();
         }
 
-        var response = await _mediator.Send(new UpdateCommand<T>(entityToUpdate, id));
+        var response = await _mediator.Send(new UpdateCommand<T>(entityToUpdate));
         return Ok(response);
     }
 

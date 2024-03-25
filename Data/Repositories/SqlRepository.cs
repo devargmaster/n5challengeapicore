@@ -1,7 +1,6 @@
 using System.Linq.Expressions;
 using Data.Contexts;
 using Data.Models;
-using Exceptions.Types;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
@@ -52,10 +51,24 @@ public class SqlRepository : IRepository
         return entity;
     }
 
-    public async Task<T> UpdateAsync<T>(T entity, Guid id) where T : BaseDomainEntity
+    public async Task<T> UpdateAsync<T>(T entity) where T : BaseDomainEntity
     {
-        context.Set<T>().Update(entity);
-        await context.SaveChangesAsync();
+        try
+        {
+            var existingEntity = await context.Set<T>().FindAsync(entity.Id);
+            if (existingEntity == null)
+            {
+                throw new KeyNotFoundException($"Entity of type {typeof(T).Name} with ID {entity.Id} not found.");
+            }
+
+            context.Entry(existingEntity).CurrentValues.SetValues(entity);
+            await context.SaveChangesAsync();
+        }
+        catch (Exception ex)
+        {
+            logger.LogInformation($"Entity of type {typeof(T).Name} with ID {entity.Id} not found.");
+            throw;
+        }
         return entity;
     }
 

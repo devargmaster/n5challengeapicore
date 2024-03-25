@@ -8,7 +8,7 @@ public class UpdateCommand<T> : IRequest<Unit> where T : BaseDomainEntity
 {
     public T EntityToUpdate { get; }
 
-    public UpdateCommand(T entity, Guid id)
+    public UpdateCommand(T entity)
     {
         EntityToUpdate = entity;
     }
