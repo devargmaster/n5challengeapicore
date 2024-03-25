@@ -1,14 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "AVaxPrqkBwySPLNDpmPL7FUR7LHAAw+Vh8MKDgC+12TUopBRayl1XqTO+JYhTfBoRWHjVGg+QF95Vj2ippuxCg==",
+  "dgSpecHash": "9uaaoJ7GMY6VAy2ZW+jVdtDc1WUYyJDnb41bq9PCBTn+UAgqYDmxN6EkEsnr/LdcJ+8aW65JJorGHrCnh+3kWA==",
   "success": true,
   "projectFilePath": "/Users/walterarce/RiderProjects/n5challengeApiCore/n5challengeapicore/CoreWebApi/CoreWebApi.csproj",
   "expectedPackageFiles": [
     "/Users/walterarce/.nuget/packages/azure.core/1.35.0/azure.core.1.35.0.nupkg.sha512",
     "/Users/walterarce/.nuget/packages/azure.identity/1.10.3/azure.identity.1.10.3.nupkg.sha512",
     "/Users/walterarce/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
-    "/Users/walterarce/.nuget/packages/mediatr/12.2.0/mediatr.12.2.0.nupkg.sha512",
-    "/Users/walterarce/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
+    "/Users/walterarce/.nuget/packages/mediatr/11.1.0/mediatr.11.1.0.nupkg.sha512",
+    "/Users/walterarce/.nuget/packages/mediatr.contracts/1.0.1/mediatr.contracts.1.0.1.nupkg.sha512",
+    "/Users/walterarce/.nuget/packages/mediatr.extensions.microsoft.dependencyinjection/11.1.0/mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",
     "/Users/walterarce/.nuget/packages/microsoft.aspnetcore.authentication.abstractions/2.2.0/microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "/Users/walterarce/.nuget/packages/microsoft.aspnetcore.authentication.core/2.2.0/microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
     "/Users/walterarce/.nuget/packages/microsoft.aspnetcore.authorization/2.2.0/microsoft.aspnetcore.authorization.2.2.0.nupkg.sha512",

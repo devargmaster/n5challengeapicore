@@ -7,13 +7,9 @@ public class PermissionsConfiguration: IEntityTypeConfiguration<Permissions>
 {
     public void Configure(EntityTypeBuilder<Permissions> builder)
     {
-       builder.HasKey(x => x.Id);
-       builder.Property(x => x.NombreEmpleado).IsRequired();
-       builder.Property(x => x.ApellidoEmpleado).IsRequired();
-       builder.Property(x => x.TipoPermisoId).IsRequired();
-//relationsship
-       builder.HasOne(x => x.PermissionsType)
-           .WithMany(x => x.Permissions)
-           .HasForeignKey(x => x.TipoPermisoId);
+        builder.HasKey(x => x.Id);
+        builder.Property(x => x.NombreEmpleado).IsRequired();
+        builder.Property(x => x.ApellidoEmpleado).IsRequired();
+        builder.Property(x => x.TipoPermisoId).IsRequired();
     }
 }

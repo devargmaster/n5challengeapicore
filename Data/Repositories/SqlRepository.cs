@@ -35,28 +35,39 @@ public class SqlRepository : IRepository
          }
     }
 
-    public Task<T> GetByIdAsync<T>(Guid id) where T : BaseDomainEntity
+    public async Task<T> GetByIdAsync<T>(Guid id) where T : BaseDomainEntity
     {
-        throw new NotImplementedException();
+        return await context.Set<T>().FindAsync(id);
     }
 
-    public Task<IEnumerable<T>> FindAsync<T>(Expression<Func<T, bool>> predicate) where T : BaseDomainEntity
+    public async Task<IEnumerable<T>> FindAsync<T>(Expression<Func<T, bool>> predicate) where T : BaseDomainEntity
     {
-        throw new NotImplementedException();
+        return await context.Set<T>().Where(predicate).ToListAsync();
     }
 
-    public Task<T> CreateAsync<T>(T entity) where T : BaseDomainEntity
+    public async Task<T> CreateAsync<T>(T entity) where T : BaseDomainEntity
     {
-        throw new NotImplementedException();
+        context.Set<T>().Add(entity);
+        await context.SaveChangesAsync();
+        return entity;
     }
 
-    public Task<T> UpdateAsync<T>(T entity) where T : BaseDomainEntity
+    public async Task<T> UpdateAsync<T>(T entity, Guid id) where T : BaseDomainEntity
     {
-        throw new NotImplementedException();
+        context.Set<T>().Update(entity);
+        await context.SaveChangesAsync();
+        return entity;
     }
 
-    public Task<T> DeleteAsync<T>(Guid id) where T : BaseDomainEntity
+    public async Task<T> DeleteAsync<T>(Guid id) where T : BaseDomainEntity
     {
-        throw new NotImplementedException();
+        var entity = await context.Set<T>().FindAsync(id);
+        if (entity == null)
+        {
+            context.Set<T>().Remove(entity);
+            await context.SaveChangesAsync();
+        }
+
+        return entity;
     }
 }

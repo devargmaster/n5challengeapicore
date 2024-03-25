@@ -19,9 +19,6 @@ public class AppDbContext : DbContext, IDbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Permissions>()
-            .HasOne(p => p.PermissionsType)
-            .WithMany()
-            .HasForeignKey(p => p.TipoPermisoId);
+    
     }
 }

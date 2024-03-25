@@ -39,17 +39,10 @@ namespace CoreWebApi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("PermissionsTypeId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<Guid>("TipoPermisoId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("PermissionsTypeId");
-
-                    b.HasIndex("TipoPermisoId");
 
                     b.ToTable("Permissions");
                 });
@@ -67,26 +60,6 @@ namespace CoreWebApi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("PermissionsTypes");
-                });
-
-            modelBuilder.Entity("CoreWebApi.Models.Entities.Permissions", b =>
-                {
-                    b.HasOne("CoreWebApi.Models.Entities.PermissionsType", null)
-                        .WithMany("Permissions")
-                        .HasForeignKey("PermissionsTypeId");
-
-                    b.HasOne("CoreWebApi.Models.Entities.PermissionsType", "PermissionsType")
-                        .WithMany()
-                        .HasForeignKey("TipoPermisoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("PermissionsType");
-                });
-
-            modelBuilder.Entity("CoreWebApi.Models.Entities.PermissionsType", b =>
-                {
-                    b.Navigation("Permissions");
                 });
 #pragma warning restore 612, 618
         }

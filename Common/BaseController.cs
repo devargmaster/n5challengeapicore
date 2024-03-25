@@ -40,8 +40,7 @@ public class BaseController<T> : ControllerBase where T: BaseDomainEntity
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<T>> GetById([FromRoute] Guid id,
-        [FromQuery] Dictionary<string, string>? entitiesToInclude = null)
+    public async Task<ActionResult<T>> GetById([FromRoute] Guid id)
     {
 
         var response = await _mediator.Send(new GetByIdQuery<T>(id: id));
@@ -75,7 +74,7 @@ public class BaseController<T> : ControllerBase where T: BaseDomainEntity
             return BadRequest();
         }
 
-        var response = await _mediator.Send(new UpdateCommand<T>(entityToUpdate));
+        var response = await _mediator.Send(new UpdateCommand<T>(entityToUpdate, id));
         return Ok(response);
     }
 
@@ -94,6 +93,7 @@ public class BaseController<T> : ControllerBase where T: BaseDomainEntity
         }
         else
         {
+            Console.WriteLine("Error al eliminar el recurso");
             return NotFound();
         }
     }
