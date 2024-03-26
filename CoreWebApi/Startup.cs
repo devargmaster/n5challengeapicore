@@ -18,9 +18,20 @@ public class Startup
         Configuration = configuration;
     }
     public IConfiguration Configuration { get; }
-    
+    private const string policyCorsName = "AllowReactApp";
     public void ConfigureServices(IServiceCollection services)
     {
+        var allowedHosts = Configuration.GetSection("Cors:AllowedHosts").Get<List<string>>();
+        services.AddCors(options =>
+        {
+            options.AddPolicy(policyCorsName,
+                builder =>
+                {
+                    builder.WithOrigins(allowedHosts.ToArray())
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+        });
         services.AddControllers();
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen(c =>
@@ -60,6 +71,7 @@ public class Startup
         
        // app.UseHttpsRedirection();
         app.UseRouting();
+        app.UseCors(policyCorsName);
         app.UseAuthorization();
         app.UseEndpoints(endpoints =>
         {
