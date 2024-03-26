@@ -1,0 +1,25 @@
+﻿services:
+  corewebapi:
+    container_name: corewebapi
+    image: corewebapi
+    build:
+      context: .
+      dockerfile: CoreWebApi/Dockerfile
+    networks:
+      - mynetwork
+    ports:
+        - "8080:8080"
+
+  sql_server_container:
+    container_name: sql_server_container
+    image: mcr.microsoft.com/mssql/server:latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=N5Challenge!
+    networks:
+      - mynetwork
+    ports:
+      - "1433:1433"
+
+networks:
+  mynetwork:

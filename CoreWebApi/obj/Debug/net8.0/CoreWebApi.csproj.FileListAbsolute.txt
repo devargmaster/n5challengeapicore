@@ -144,3 +144,4 @@
 /Users/walterarce/RiderProjects/n5challengeApiCore/n5challengeapicore/CoreWebApi/obj/Debug/net8.0/CoreWebApi.pdb
 /Users/walterarce/RiderProjects/n5challengeApiCore/n5challengeapicore/CoreWebApi/obj/Debug/net8.0/CoreWebApi.genruntimeconfig.cache
 /Users/walterarce/RiderProjects/n5challengeApiCore/n5challengeapicore/CoreWebApi/obj/Debug/net8.0/ref/CoreWebApi.dll
+/Users/walterarce/RiderProjects/n5challengeApiCore/n5challengeapicore/CoreWebApi/bin/Debug/net8.0/appsettings.Production.json

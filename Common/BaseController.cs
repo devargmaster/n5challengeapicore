@@ -32,6 +32,10 @@ public class BaseController<T> : ControllerBase where T: BaseDomainEntity
     public async Task<ActionResult<List<T>>> Get()
     {
         var response = await _mediator.Send(new GetQuery<T>());
+        if (response.Data == null)
+        {
+            return NotFound();
+        }
         return Ok(response.Data.ToList());
     }
     [HttpGet("{id}")]
