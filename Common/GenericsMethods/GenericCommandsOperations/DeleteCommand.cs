@@ -5,9 +5,9 @@ namespace Common.GenericsMethods;
 
 public class DeleteCommand<T> : IRequest<Unit> where T : BaseDomainEntity
 {
-    public Guid Id { get; }
+    public int Id { get; }
 
-    public DeleteCommand(Guid id)
+    public DeleteCommand(int id)
     {
         Id = id;
     }

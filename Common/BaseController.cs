@@ -44,7 +44,7 @@ public class BaseController<T> : ControllerBase where T: BaseDomainEntity
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<T>> GetById([FromRoute] Guid id)
+    public async Task<ActionResult<T>> GetById([FromRoute] int id)
     {
 
         var response = await _mediator.Send(new GetByIdQuery<T>(id: id));
@@ -71,7 +71,7 @@ public class BaseController<T> : ControllerBase where T: BaseDomainEntity
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status422UnprocessableEntity)]
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<T>> Update([FromRoute] Guid id, [FromBody] T entityToUpdate)
+    public async Task<ActionResult<T>> Update([FromRoute] int id, [FromBody] T entityToUpdate)
     {
         if (id != entityToUpdate.Id)
         {
@@ -88,7 +88,7 @@ public class BaseController<T> : ControllerBase where T: BaseDomainEntity
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult> Delete([FromRoute] Guid id)
+    public async Task<ActionResult> Delete([FromRoute] int id)
     {
         await _mediator.Send(new DeleteCommand<T>(id));
         return Ok();

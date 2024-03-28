@@ -24,9 +24,11 @@ namespace CoreWebApi.Migrations
 
             modelBuilder.Entity("CoreWebApi.Models.Entities.Permissions", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("ApellidoEmpleado")
                         .IsRequired()
@@ -39,8 +41,8 @@ namespace CoreWebApi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("TipoPermisoId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("TipoPermisoId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -49,9 +51,11 @@ namespace CoreWebApi.Migrations
 
             modelBuilder.Entity("CoreWebApi.Models.Entities.PermissionsType", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Descripcion")
                         .IsRequired()

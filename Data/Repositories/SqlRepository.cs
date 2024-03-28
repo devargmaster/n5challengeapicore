@@ -34,7 +34,7 @@ public class SqlRepository : IRepository
          }
     }
 
-    public async Task<T> GetByIdAsync<T>(Guid id) where T : BaseDomainEntity
+    public async Task<T> GetByIdAsync<T>(int id) where T : BaseDomainEntity
     {
         return await context.Set<T>().FindAsync(id);
     }
@@ -72,7 +72,7 @@ public class SqlRepository : IRepository
         return entity;
     }
 
-    public async Task<T> DeleteAsync<T>(Guid id) where T : BaseDomainEntity
+    public async Task<T> DeleteAsync<T>(int id) where T : BaseDomainEntity
     {
         var entity = await context.Set<T>().FindAsync(id);
         if (entity != null)

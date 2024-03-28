@@ -16,7 +16,6 @@ public class CreateHandler<T> : IRequestHandler<CreateCommand<T>, CreateResponse
 
     public async Task<CreateResponse<T>> Handle(CreateCommand<T> request, CancellationToken cancellationToken)
     {
-        request.EntityToCreate.Id = new Guid();
         var entity = await _repository.CreateAsync(request.EntityToCreate);
         return new CreateResponse<T>(entity);
     }
