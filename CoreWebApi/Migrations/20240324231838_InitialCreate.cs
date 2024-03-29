@@ -15,7 +15,8 @@ namespace CoreWebApi.Migrations
                 name: "PermissionsTypes",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"), 
                     Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
@@ -27,12 +28,13 @@ namespace CoreWebApi.Migrations
                 name: "Permissions",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     NombreEmpleado = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ApellidoEmpleado = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     FechaPermiso = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    TipoPermisoId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    PermissionsTypeId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    TipoPermisoId = table.Column<int>(type: "int", nullable: false),
+                    PermissionsTypeId = table.Column<int>(type: "int", nullable: true) // Cambia el tipo a int
                 },
                 constraints: table =>
                 {
@@ -42,12 +44,6 @@ namespace CoreWebApi.Migrations
                         column: x => x.PermissionsTypeId,
                         principalTable: "PermissionsTypes",
                         principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Permissions_PermissionsTypes_TipoPermisoId",
-                        column: x => x.TipoPermisoId,
-                        principalTable: "PermissionsTypes",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
