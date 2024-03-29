@@ -33,8 +33,7 @@ namespace CoreWebApi.Migrations
                     NombreEmpleado = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ApellidoEmpleado = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     FechaPermiso = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    TipoPermisoId = table.Column<int>(type: "int", nullable: false),
-                    PermissionsTypeId = table.Column<int>(type: "int", nullable: true) // Cambia el tipo a int
+                    PermissionsTypeId = table.Column<int>(type: "int", nullable: true) 
                 },
                 constraints: table =>
                 {
@@ -50,11 +49,7 @@ namespace CoreWebApi.Migrations
                 name: "IX_Permissions_PermissionsTypeId",
                 table: "Permissions",
                 column: "PermissionsTypeId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Permissions_TipoPermisoId",
-                table: "Permissions",
-                column: "TipoPermisoId");
+            
         }
 
         /// <inheritdoc />
