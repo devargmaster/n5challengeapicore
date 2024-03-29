@@ -8,5 +8,6 @@ public class Permissions : BaseDomainEntity
     public string ApellidoEmpleado { get; set; }
     
     public DateTime FechaPermiso { get; set; }
-    public int TipoPermisoId { get; set; }
+    
+    public int PermissionsTypeId { get; set; }
 }

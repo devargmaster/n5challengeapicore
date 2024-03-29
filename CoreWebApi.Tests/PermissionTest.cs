@@ -14,7 +14,7 @@ namespace CoreWebApi.Tests.Models.Entities
                 NombreEmpleado = "Juan",
                 ApellidoEmpleado = "Perez",
                 FechaPermiso = DateTime.Now,
-                TipoPermisoId =99
+                PermissionsTypeId =99
             };
 
             var tipoPermiso = new PermissionsType

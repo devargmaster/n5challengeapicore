@@ -10,6 +10,6 @@ public class PermissionsConfiguration: IEntityTypeConfiguration<Permissions>
         builder.HasKey(x => x.Id);
         builder.Property(x => x.NombreEmpleado).IsRequired();
         builder.Property(x => x.ApellidoEmpleado).IsRequired();
-        builder.Property(x => x.TipoPermisoId).IsRequired();
+        builder.Property(x => x.PermissionsTypeId).IsRequired();
     }
 }
